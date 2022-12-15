@@ -1,0 +1,380 @@
+#################################################################
+[20221215 05:31:47] [sh]: script for offline migration
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:31:47] [sh]: check_flags begin
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:31:47] [sh]: flag ( x ) [en_rm_input]
+[20221215 05:31:47] [sh]: flag ( x ) [en_xsltproc]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_dis_free_all]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_pass_save_old]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_same_fxs]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_new_xml_from_av]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_no_transfer]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_no_transfer_internal]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_pass_merge_new]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_merge_on_booting]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_merge_on_booting_save]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_en_clear_run]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_zero_xsl]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:31:47] [sh]: flag ( x ) [stop]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_is_prepare]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_support_chrt]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_patch_exit]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_is_lower_release]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_is_same_release]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_init_mode]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_check_abort]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_disable_regen_trans_id]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_end]
+[20221215 05:31:47] [sh]: check_flags end
+[20221215 05:31:47] [sh]: for booting-up [0 1]
+[20221215 05:31:47] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:31:47] [sh]: nt_st []
+--- df ---
+Filesystem                Size      Used Available Use% Mounted on
+overlay                 160.0G     24.4G    135.5G  15% /
+tmpfs                    64.0M      8.0K     64.0M   0% /dev
+tmpfs                    15.7G         0     15.7G   0% /sys/fs/cgroup
+shm                      64.0M         0     64.0M   0% /dev/shm
+overlay                 160.0G     24.4G    135.5G  15% /sbin/docker-init
+/dev/vda1               160.0G     24.4G    135.5G  15% /etc/resolv.conf
+/dev/vda1               160.0G     24.4G    135.5G  15% /dev/mtd_statusB
+/dev/vda1               160.0G     24.4G    135.5G  15% /dev/mtd_statusA
+/dev/vda1               160.0G     24.4G    135.5G  15% /dev/mtd_linuxA
+/dev/vda1               160.0G     24.4G    135.5G  15% /mnt/nand-dbase
+/dev/vda1               160.0G     24.4G    135.5G  15% /dev/mtd_linuxB
+/dev/vda1               160.0G     24.4G    135.5G  15% /dev/mtd_preferred_oswp
+/dev/vda1               160.0G     24.4G    135.5G  15% /mnt/nand
+overlay                 160.0G     24.4G    135.5G  15% /usr/share/zoneinfo/posix/Etc/UTC
+/dev/vda1               160.0G     24.4G    135.5G  15% /etc/hostname
+/dev/vda1               160.0G     24.4G    135.5G  15% /mnt/isam-nor-mgnt-partition
+/dev/vda1               160.0G     24.4G    135.5G  15% /etc/hosts
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/board_reset
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/network_itfs.json
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/chassis
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/shelf
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/proc/cmdline
+overlay                 160.0G     24.4G    135.5G  15% /usr/local/lib/api_stub/api_stub.so
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/sys/class/reborn/boot/boot_uncommitted
+/dev/vda1               160.0G     24.4G    135.5G  15% /isam/user/host/sys/class/reborn/boot/boot_oswp_sel
+/dev/vda1               160.0G     24.4G    135.5G  15% /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/20221215052714/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/host/setup_lt_0/lt_1
+--- df ---
+[20221215 05:31:47] [sh]: curr_rels_ver [23.3]
+[20221215 05:31:47] [sh]: ver [2303.999888]
+[20221215 05:31:47] [sh]: dir [/mnt/persistent/migration/fxs-ol-ext/2303.999888/] not found
+[20221215 05:31:47] [sh]: set flag [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:31:47] [sh]:   [/tmp/dmsu/flag_offline_sh_dis_cmp_cap_xxx2]
+---[confd-cdb0]---
+total 0
+drwxr-xr-x    2 root     root             6 2022-12-15 05:31:29 +0000 .
+drwxrwxrwx    4 root     root            54 2022-12-15 05:31:29 +0000 ..
+---
+[20221215 05:31:47] [sh]: clear_output [boot-up-check]
+[20221215 05:31:48] [sh]: check oswp [0] sw committed (1) (res=1)
+[20221215 05:31:48] [sh]: exit-code (0) [] is_boot_up[y] is_activate[n]_ck[n] is_prepare[n] is_no_need[n]
+[20221215 05:31:48] [sh]: fn_pp []
+dms_upgrade.sh exit (0), 2022-12-15 05:31:48
+-------------------------------------------------------------------
+-----
+
+#################################################################
+[20221215 05:35:05] [sh]: script for offline migration
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:35:05] [sh]: check_flags begin
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:35:05] [sh]: flag ( x ) [en_rm_input]
+[20221215 05:35:05] [sh]: flag ( x ) [en_xsltproc]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_dis_free_all]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_pass_save_old]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_same_fxs]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_new_xml_from_av]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_no_transfer]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_no_transfer_internal]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_pass_merge_new]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_merge_on_booting]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_merge_on_booting_save]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_en_clear_run]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_zero_xsl]
+[20221215 05:35:05] [sh]: flag found [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:35:05] [sh]: flag found [stop]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_is_prepare]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_support_chrt]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_patch_exit]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_is_lower_release]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_is_same_release]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_init_mode]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_check_abort]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_disable_regen_trans_id]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_end]
+[20221215 05:35:05] [sh]: check_flags end
+[20221215 05:35:05] [sh]: for migration [2] [activate]
+[20221215 05:35:05] [sh]: unset flag [offline_init_mode]
+[20221215 05:35:05] [sh]:   [/tmp/dmsu/flag_offline_init_mode]
+[20221215 05:35:05] [sh]: unset flag [offline_is_prepare]
+[20221215 05:35:05] [sh]:   [/tmp/dmsu/flag_offline_is_prepare]
+[20221215 05:35:05] [sh]: unset flag [offline_check_abort]
+[20221215 05:35:05] [sh]:   [/tmp/dmsu/flag_offline_check_abort]
+[20221215 05:35:05] [sh]: flag found [stop]
+[20221215 05:35:05] [sh]: set flag [offline_sh_stop]
+[20221215 05:35:05] [sh]:   [/tmp/dmsu/flag_offline_sh_stop]
+[20221215 05:35:05] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:35:05] [sh]: flag found [offline_sh_stop]
+[20221215 05:35:05] [sh]: flag [offline_sh_stop] found, stopped
+[20221215 05:35:05] [sh]: exit-code (99) [] is_boot_up[n] is_activate[y]_ck[n] is_prepare[n] is_no_need[n]
+[20221215 05:35:05] [sh]: exit 0 for activate
+[20221215 05:35:05] [sh]: back_4_act_failed begin
+[20221215 05:35:05] [sh]: back_4_act_failed end
+[20221215 05:35:05] [sh]: fn_pp [dmsu_last_ps_res_act_A]
+[20221215 05:35:05] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_1] begin
+Filesystem                Size      Used Available Use% Mounted on
+[20221215 05:35:05] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_1] end 
+SHELL :  mount of tmpfs ok
+[20221215 05:35:05] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_2] begin
+Filesystem                Size      Used Available Use% Mounted on
+overlay                 160.0G     25.1G    134.9G  16% /
+[20221215 05:35:05] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_2] end 
+dms_upgrade.sh exit (0), 2022-12-15 05:35:05
+-------------------------------------------------------------------
+-----
+
+#################################################################
+[20221215 05:37:04] [sh]: script for offline migration
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:37:04] [sh]: check_flags begin
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:37:04] [sh]: flag ( x ) [en_rm_input]
+[20221215 05:37:04] [sh]: flag ( x ) [en_xsltproc]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_dis_free_all]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_pass_save_old]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_same_fxs]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_new_xml_from_av]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_no_transfer]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_no_transfer_internal]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_pass_merge_new]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_merge_on_booting]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_merge_on_booting_save]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_en_clear_run]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_zero_xsl]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:37:04] [sh]: flag ( x ) [stop]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_is_prepare]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_support_chrt]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_patch_exit]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_is_lower_release]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_is_same_release]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_init_mode]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_check_abort]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_disable_regen_trans_id]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_end]
+[20221215 05:37:04] [sh]: check_flags end
+[20221215 05:37:04] [sh]: for booting-up [0 1]
+[20221215 05:37:04] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:37:04] [sh]: nt_st []
+--- df ---
+Filesystem                Size      Used Available Use% Mounted on
+overlay                 160.0G     25.3G    134.7G  16% /
+tmpfs                    64.0M      8.0K     64.0M   0% /dev
+tmpfs                    15.7G         0     15.7G   0% /sys/fs/cgroup
+shm                      64.0M         0     64.0M   0% /dev/shm
+overlay                 160.0G     25.3G    134.7G  16% /sbin/docker-init
+/dev/vda1               160.0G     25.3G    134.7G  16% /etc/resolv.conf
+/dev/vda1               160.0G     25.3G    134.7G  16% /mnt/nand-dbase
+/dev/vda1               160.0G     25.3G    134.7G  16% /dev/mtd_statusB
+/dev/vda1               160.0G     25.3G    134.7G  16% /dev/mtd_preferred_oswp
+/dev/vda1               160.0G     25.3G    134.7G  16% /mnt/nand
+/dev/vda1               160.0G     25.3G    134.7G  16% /dev/mtd_statusA
+/dev/vda1               160.0G     25.3G    134.7G  16% /mnt/isam-nor-mgnt-partition
+/dev/vda1               160.0G     25.3G    134.7G  16% /dev/mtd_linuxA
+/dev/vda1               160.0G     25.3G    134.7G  16% /dev/mtd_linuxB
+/dev/vda1               160.0G     25.3G    134.7G  16% /etc/hostname
+overlay                 160.0G     25.3G    134.7G  16% /usr/share/zoneinfo/posix/Etc/UTC
+/dev/vda1               160.0G     25.3G    134.7G  16% /etc/hosts
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/chassis
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/board_reset
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/shelf
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/network_itfs.json
+overlay                 160.0G     25.3G    134.7G  16% /usr/local/lib/api_stub/api_stub.so
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/proc/cmdline
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/sys/class/reborn/boot/boot_oswp_sel
+/dev/vda1               160.0G     25.3G    134.7G  16% /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/20221215052714/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/host/setup_lt_0/lt_1
+/dev/vda1               160.0G     25.3G    134.7G  16% /isam/user/host/sys/class/reborn/boot/boot_uncommitted
+--- df ---
+[20221215 05:37:05] [sh]: curr_rels_ver [22.12]
+[20221215 05:37:05] [sh]: ver [22.614]
+[20221215 05:37:05] [sh]: dir [/mnt/persistent/migration/fxs-ol-ext/22.614/] not found
+[20221215 05:37:05] [sh]: set flag [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:37:05] [sh]:   [/tmp/dmsu/flag_offline_sh_dis_cmp_cap_xxx2]
+---[confd-cdb0]---
+total 0
+drwxr-xr-x    2 root     root             6 2022-12-15 05:35:01 +0000 .
+drwxrwxrwx    6 root     root            83 2022-12-15 05:35:59 +0000 ..
+---
+[20221215 05:37:05] [sh]: freemem (18314440 >= 300000)
+[20221215 05:37:05] [sh]: m_umount_dir [/mig_offline_2] [m_umount_dir_1] begin
+Filesystem                Size      Used Available Use% Mounted on
+[20221215 05:37:05] [sh]: m_umount_dir [/mig_offline_2] [m_umount_dir_1] end 
+---
+[20221215 05:37:05] [sh]: load_new [/mig_offline_2/file/]
+[20221215 05:37:05] [sh]: load result [/mig_offline_2/file/] failed (7) (res=7)
+[20221215 05:37:05] [sh]: exit-code (4) [] is_boot_up[y] is_activate[n]_ck[n] is_prepare[n] is_no_need[n]
+[20221215 05:37:05] [sh]: fn_pp []
+dms_upgrade.sh exit (4), 2022-12-15 05:37:05
+-------------------------------------------------------------------
+-----
+
+#################################################################
+[20221215 05:41:08] [sh]: script for offline migration
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:41:08] [sh]: check_flags begin
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:41:08] [sh]: flag ( x ) [en_rm_input]
+[20221215 05:41:08] [sh]: flag ( x ) [en_xsltproc]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_dis_free_all]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_pass_save_old]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_same_fxs]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_new_xml_from_av]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_no_transfer]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_no_transfer_internal]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_pass_merge_new]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_merge_on_booting]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_merge_on_booting_save]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_en_clear_run]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_zero_xsl]
+[20221215 05:41:08] [sh]: flag found [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:41:08] [sh]: flag found [stop]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_is_prepare]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_support_chrt]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_patch_exit]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_is_lower_release]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_is_same_release]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_init_mode]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_check_abort]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_disable_regen_trans_id]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_end]
+[20221215 05:41:08] [sh]: check_flags end
+[20221215 05:41:08] [sh]: for migration [1] [activate]
+[20221215 05:41:08] [sh]: unset flag [offline_init_mode]
+[20221215 05:41:08] [sh]:   [/tmp/dmsu/flag_offline_init_mode]
+[20221215 05:41:08] [sh]: unset flag [offline_is_prepare]
+[20221215 05:41:08] [sh]:   [/tmp/dmsu/flag_offline_is_prepare]
+[20221215 05:41:08] [sh]: unset flag [offline_check_abort]
+[20221215 05:41:08] [sh]:   [/tmp/dmsu/flag_offline_check_abort]
+[20221215 05:41:08] [sh]: flag found [stop]
+[20221215 05:41:08] [sh]: set flag [offline_sh_stop]
+[20221215 05:41:08] [sh]:   [/tmp/dmsu/flag_offline_sh_stop]
+[20221215 05:41:08] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:41:08] [sh]: flag found [offline_sh_stop]
+[20221215 05:41:08] [sh]: flag [offline_sh_stop] found, stopped
+[20221215 05:41:08] [sh]: exit-code (99) [] is_boot_up[n] is_activate[y]_ck[n] is_prepare[n] is_no_need[n]
+[20221215 05:41:08] [sh]: exit 0 for activate
+[20221215 05:41:08] [sh]: back_4_act_failed begin
+[20221215 05:41:08] [sh]: back_4_act_failed end
+[20221215 05:41:08] [sh]: fn_pp [dmsu_last_ps_res_act_A]
+[20221215 05:41:08] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_1] begin
+Filesystem                Size      Used Available Use% Mounted on
+[20221215 05:41:08] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_1] end 
+SHELL :  mount of tmpfs ok
+[20221215 05:41:08] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_2] begin
+Filesystem                Size      Used Available Use% Mounted on
+overlay                 160.0G     26.2G    133.7G  16% /
+[20221215 05:41:08] [sh]: m_umount_dir [/tmp/dmsu_last_ps_res/] [m_umount_dir_last_ps_res_2] end 
+dms_upgrade.sh exit (0), 2022-12-15 05:41:08
+-------------------------------------------------------------------
+-----
+
+#################################################################
+[20221215 05:43:16] [sh]: script for offline migration
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:43:16] [sh]: check_flags begin
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:43:16] [sh]: flag ( x ) [en_rm_input]
+[20221215 05:43:16] [sh]: flag ( x ) [en_xsltproc]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_dis_free_all]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_pass_save_old]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_same_fxs]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_new_xml_from_av]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_no_transfer]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_no_transfer_internal]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_pass_merge_new]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_merge_on_booting]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_merge_on_booting_save]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_en_clear_run]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_zero_xsl]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:43:16] [sh]: flag ( x ) [stop]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_no_action_for_activate]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_is_prepare]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_support_chrt]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_patch_exit]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_is_lower_release]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_is_same_release]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_enable_syslog]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_init_mode]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_check_abort]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_disable_regen_trans_id]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_end]
+[20221215 05:43:16] [sh]: check_flags end
+[20221215 05:43:16] [sh]: for booting-up [0 1]
+[20221215 05:43:16] [sh]: flag ( x ) [offline_sh_stop]
+[20221215 05:43:16] [sh]: nt_st []
+--- df ---
+Filesystem                Size      Used Available Use% Mounted on
+overlay                 160.0G     27.5G    132.4G  17% /
+tmpfs                    64.0M      8.0K     64.0M   0% /dev
+tmpfs                    15.7G         0     15.7G   0% /sys/fs/cgroup
+shm                      64.0M         0     64.0M   0% /dev/shm
+overlay                 160.0G     27.5G    132.4G  17% /sbin/docker-init
+/dev/vda1               160.0G     27.5G    132.4G  17% /etc/resolv.conf
+/dev/vda1               160.0G     27.5G    132.4G  17% /mnt/nand-dbase
+/dev/vda1               160.0G     27.5G    132.4G  17% /mnt/isam-nor-mgnt-partition
+/dev/vda1               160.0G     27.5G    132.4G  17% /dev/mtd_linuxB
+/dev/vda1               160.0G     27.5G    132.4G  17% /mnt/nand
+/dev/vda1               160.0G     27.5G    132.4G  17% /dev/mtd_linuxA
+overlay                 160.0G     27.5G    132.4G  17% /usr/share/zoneinfo/posix/Etc/UTC
+/dev/vda1               160.0G     27.5G    132.4G  17% /dev/mtd_statusB
+/dev/vda1               160.0G     27.5G    132.4G  17% /dev/mtd_statusA
+/dev/vda1               160.0G     27.5G    132.4G  17% /etc/hostname
+/dev/vda1               160.0G     27.5G    132.4G  17% /dev/mtd_preferred_oswp
+/dev/vda1               160.0G     27.5G    132.4G  17% /etc/hosts
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/board_reset
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/network_itfs.json
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/chassis
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/shelf
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/proc/cmdline
+overlay                 160.0G     27.5G    132.4G  17% /usr/local/lib/api_stub/api_stub.so
+/dev/vda1               160.0G     27.5G    132.4G  17% /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/20221215052714/FI_FGLTB_YANG_OFFLINE_MIGRATION_01/host/setup_lt_0/lt_1
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/sys/class/reborn/boot/boot_uncommitted
+/dev/vda1               160.0G     27.5G    132.4G  17% /isam/user/host/sys/class/reborn/boot/boot_oswp_sel
+--- df ---
+[20221215 05:43:16] [sh]: curr_rels_ver [23.3]
+[20221215 05:43:16] [sh]: ver [2303.999888]
+[20221215 05:43:16] [sh]: dir [/mnt/persistent/migration/fxs-ol-ext/2303.999888/] not found
+[20221215 05:43:16] [sh]: set flag [offline_sh_dis_cmp_cap_xxx2]
+[20221215 05:43:16] [sh]:   [/tmp/dmsu/flag_offline_sh_dis_cmp_cap_xxx2]
+---[confd-cdb0]---
+total 0
+drwxr-xr-x    2 root     root             6 2022-12-15 05:41:04 +0000 .
+drwxrwxrwx    6 root     root            83 2022-12-15 05:42:09 +0000 ..
+---
+[20221215 05:43:16] [sh]: freemem (15301464 >= 300000)
+[20221215 05:43:16] [sh]: m_umount_dir [/mig_offline_2] [m_umount_dir_1] begin
+Filesystem                Size      Used Available Use% Mounted on
+[20221215 05:43:16] [sh]: m_umount_dir [/mig_offline_2] [m_umount_dir_1] end 
+---
+[20221215 05:43:16] [sh]: load_new [/mig_offline_2/file/]
+[20221215 05:43:16] [sh]: load result [/mig_offline_2/file/] failed (7) (res=7)
+[20221215 05:43:16] [sh]: exit-code (4) [] is_boot_up[y] is_activate[n]_ck[n] is_prepare[n] is_no_need[n]
+[20221215 05:43:16] [sh]: fn_pp []
+dms_upgrade.sh exit (4), 2022-12-15 05:43:16
+-------------------------------------------------------------------
+-----
+
