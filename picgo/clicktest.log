@@ -1,0 +1,122 @@
+[][Fri Dec 16 10:22:02 UTC 2022] - This option: sanity will be considered for default runs
+[][Fri Dec 16 10:22:02 UTC 2022] - Info: Taking /repo/root/robot/BATCH/hostbatch.json files repo
+[][Fri Dec 16 10:22:03 UTC 2022] - /repo/root/devtools/bin/download-host-build  --build http://artifactory-hz1.int.net.nokia.com/artifactory/isam-hst-test-local/Shanghai/cVgEv3KUa2  --flatten --board '*' --models changed_items --output /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/images --models meta_data
+[][Fri Dec 16 10:22:15 UTC 2022] - Info : bld_changed_items.json found
+[][Fri Dec 16 10:22:16 UTC 2022] - python /repo/root/devtools/bin/../siftester/ctag_case_selection/get_impact_items.py  --filter batch=FI_FGLTB_YANG_OFFLINE_MIGRATION_02 --filter release=23.03 --filter build=2303.021 --changed_items /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/images/bld_changed_items.json --directory /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/avoidance  --nologtokibana NOLOGTOKIBANA 
+[][Fri Dec 16 10:22:18 UTC 2022] - Info : No impacted batches for given modifications
+[][Fri Dec 16 10:22:18 UTC 2022] - {
+  "batches": [],
+  "JenkinsURL": "http://jenkins-clicktest.prod7.gsn107.k8s.fnbba.dyn.nesc.nokia.net/job/daily-pipeline/13075/",
+  "triggeredUser": "zhenac_buildme",
+  "avoidedbatches": [
+    "FI_FGLTB_YANG_OFFLINE_MIGRATION_02"
+  ],
+  "impacted_apps": [],
+  "metadata": {
+    "build": "",
+    "release": "",
+    "test_info": {
+      "cs": "CS2538",
+      "changeset": "",
+      "repo": "ROBOT"
+    },
+    "sw_baseline": "lsr2303.022906",
+    "sw_baseline_changeset": "ebfeefda0b70",
+    "sw_changeset": "b44a8db232ea"
+  },
+  "summary": {
+    "totalBatches": "899",
+    "totalBatchesForRelease": "1",
+    "filteredBatchesBeforeAvoidance": "1",
+    "filteredBatches": "0",
+    "avoidedBatches": "1"
+  }
+}
+[][Fri Dec 16 10:22:18 UTC 2022] - List of batches to be performed:
+[][Fri Dec 16 10:22:18 UTC 2022] - - FI_FGLTB_YANG_OFFLINE_MIGRATION_02
+[][Fri Dec 16 10:22:18 UTC 2022] - All batches (#1) will be executed in Serial
+[][Fri Dec 16 10:22:18 UTC 2022] - Please refer to /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/clicktest.log for details
+[][Fri Dec 16 10:22:18 UTC 2022] - Info :  isam-params-overlay is set to default option reboot=1
+[][Fri Dec 16 10:22:18 UTC 2022] - Info: Skipping valgrind app list to start-isam, to enable,  pass --valgrind to clicktest while launching
+[][Fri Dec 16 10:36:08 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: host status -> ready
+[][Fri Dec 16 10:36:09 UTC 2022] - List of final ATCs selected:  YANG_OFFLINE_MIGRATION_WITHOUT_AV_02
+[][Fri Dec 16 10:36:13 UTC 2022] - Info : Simulator IP:172.17.0.1 is reachable,so proceeding to LTB.
+[][Fri Dec 16 10:36:13 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Triggering LTB
+[][Fri Dec 16 10:36:13 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: /repo/root/robot/cm8/auto/tools/pbscript/launchTestBatch -v -k          -R 23.03 -r x -N fglt-b         -V MOSWA_FIBER:/mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/setup.yaml -K /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/yangtar/lightspan_2303.555555.yang.tar -D /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/FI_FGLTB_YANG_OFFLINE_MIGRATION_02         -d argumentfile-/mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/testcase_list.txt,variable-HOST_ONU:True -a --framework ROBOT -G 172.17.0.1   --testdata MOSWA/FIBER/ZZ_YANG_MIGRATION         -e MERC_HOST   
+[][Fri Dec 16 10:36:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:36:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:36:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:37:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:37:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:37:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:37:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:38:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:38:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:38:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:38:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:39:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:39:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:39:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:39:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:40:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:40:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:40:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:40:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:41:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:41:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:41:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:41:53 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:42:23 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:42:23 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:42:53 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:42:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:43:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:43:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:43:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:43:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:44:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:44:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:44:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:44:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:45:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:45:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:45:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:45:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:46:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:46:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:46:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:46:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:47:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:47:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:47:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:47:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:48:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:48:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:48:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:48:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:49:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:49:24 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:49:54 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:49:54 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:50:24 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:50:25 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:50:55 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:50:55 UTC 2022] - ongoing=1,completed=0
+[][Fri Dec 16 10:51:25 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: Checking for known SMP hang issue
+[][Fri Dec 16 10:51:25 UTC 2022] -  FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: LTB completed
+[][Fri Dec 16 10:51:25 UTC 2022] - ongoing=0,completed=1
+[][Fri Dec 16 10:51:25 UTC 2022] - Batch completed
+[][Fri Dec 16 10:51:25 UTC 2022] - 
+[][Fri Dec 16 10:51:25 UTC 2022] - ===========================
+[][Fri Dec 16 10:51:25 UTC 2022] - Test Results
+[][Fri Dec 16 10:51:25 UTC 2022] - ===========================
+[][Fri Dec 16 10:51:25 UTC 2022] - Batch	Status	Total	Passed	Failed	Sup	Sus	Logs	Batch
+[][Fri Dec 16 10:51:25 UTC 2022] - Sus/Sup
+[][Fri Dec 16 10:51:25 UTC 2022] - FR's
+[][Fri Dec 16 10:51:25 UTC 2022] - FI_FGLTB_YANG_OFFLINE_MIGRATION_02	COMPLETED	1	0	1	0	0	/mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202	-
+[][Fri Dec 16 10:51:27 UTC 2022] - Removed locally downloaded images when start-isam-qemu/docker been used for images download
+[][Fri Dec 16 10:51:27 UTC 2022] - total 0
+drwxrwxrwx. 2 root root 272 Dec 16 10:36 fglt-b
+[][Fri Dec 16 10:51:45 UTC 2022] - For logs overview run: /repo/root/devtools/bin/../ClickTest/log/showlog.py --logdir /mnt/logs/FI_FGLTB_YANG_OFFLINE_MIGRATION_02/20221216102202
+[][Fri Dec 16 10:51:45 UTC 2022] - FI_FGLTB_YANG_OFFLINE_MIGRATION_02	: handleFailure: TI FAILURE, TI FAILED, One or more testcases failed
+[][Fri Dec 16 10:51:45 UTC 2022] - total time : 00:29:43 hours
